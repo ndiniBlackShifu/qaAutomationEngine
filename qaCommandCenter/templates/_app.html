@@ -11,7 +11,7 @@
             <ul class="tabs">
                 <li class="tab col m4 s12">
                     <a class="blue-text button" id="all-item">
-                        {{ _('Initiate Tests') }} <span class="grey-text small-text" id="all-count">{{ all_count }}</span>
+                        {{ _('Initiate Tests') }} <span class="grey-text small-text" id="all-count"></span>
                     </a>
                 </li>
                 <li class="tab col m4 s12">
@@ -37,8 +37,39 @@
     </div>
 
     <div class="items">
-        {% for item in items %}
-            {% include '_item.html' %}
-        {% endfor %}
+        <div class="row item card-panel" data-body="Company Flow">
+    <span class="item-body">
+        Company Flow
+    </span>
+
+        <a class="waves-effect waves-light btn green right" href="#app">Run Test</a>
+</div>
+
+<div class="row item card-panel "  data-body="Managers Flow">
+    <span class="item-body">
+        Managers Flow
+    </span>
+        <a class="waves-effect waves-light btn green right" href="#app">Run Test</a>
+</div>
+
+<div class="row item card-panel hoverable"
+      data-body="Contractor Flow">
+    <span class="item-body">
+        Contractor Flow
+    </span>
+        <a class="waves-effect waves-light btn blue green right" href="#app">Run Test</a>
+</div>
+
+
+<div class="row item card-panel "
+      data-body="Contractor Flow">
+    <span class="item-body">
+        Check Broken Links
+    </span>
+        <a class="waves-effect waves-light btn green right" href="#app">Run Test</a>
+</div>
+<!--        {% for item in items %}-->
+<!--            {% include '_item.html' %}-->
+<!--        {% endfor %}-->
     </div>
 {% endblock %}
