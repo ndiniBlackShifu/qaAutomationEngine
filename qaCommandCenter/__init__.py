@@ -1,10 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-    :author: Grey Li (李辉)
-    :url: http://greyli.com
-    :copyright: © 2018 Grey Li <withlihui@gmail.com>
-    :license: MIT, see LICENSE for more details.
-"""
+
 import os
 
 import click
@@ -25,7 +20,7 @@ def create_app(config_name=None):
     if config_name is None:
         config_name = os.getenv('FLASK_CONFIG', 'development')
 
-    app = Flask('todoism')
+    app = Flask('qaCommandCenter')
     app.config.from_object(config[config_name])
 
     register_extensions(app)
@@ -122,7 +117,7 @@ def register_commands(app):
         if os.system('pybabel extract -F babel.cfg -k _l -o messages.pot .'):
             raise RuntimeError('extract command failed')
         if os.system(
-                'pybabel init -i messages.pot -d todoism/translations -l ' + locale):
+                'pybabel init -i messages.pot -d qaCommandCenter/translations -l ' + locale):
             raise RuntimeError('init command failed')
         os.remove('messages.pot')
 
@@ -131,12 +126,12 @@ def register_commands(app):
         """Update all languages."""
         if os.system('pybabel extract -F babel.cfg -k _l -o messages.pot .'):
             raise RuntimeError('extract command failed')
-        if os.system('pybabel update -i messages.pot -d todoism/translations'):
+        if os.system('pybabel update -i messages.pot -d qaCommandCenter/translations'):
             raise RuntimeError('update command failed')
         os.remove('messages.pot')
 
     @translate.command()
     def compile():
         """Compile all languages."""
-        if os.system('pybabel compile -d todoism/translations'):
+        if os.system('pybabel compile -d qaCommandCenter/translations'):
             raise RuntimeError('compile command failed')

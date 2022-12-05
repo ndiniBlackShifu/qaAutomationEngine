@@ -1,13 +1,9 @@
 # -*- coding: utf-8 -*-
-"""
-    :author: Grey Li (李辉)
-    :url: http://greyli.com
-    :copyright: © 2018 Grey Li <withlihui@gmail.com>
-    :license: MIT, see LICENSE for more details.
-"""
+
 from flask import render_template, Blueprint, current_app, make_response, jsonify
 from flask_babel import _
 from flask_login import current_user
+#from qaCommandCenter.jbcases.CompanyFlow import companyflow
 
 from qaCommandCenter.extensions import db
 
@@ -18,6 +14,15 @@ home_bp = Blueprint('home', __name__)
 def index():
     return render_template('index.html')
 
+
+# @home_bp.route('/results')
+# def results():
+#     return render_template('resultsdash.html')
+
+@home_bp.route('/companyflow')
+def results():
+    #CompanyFlow.companyflow()
+    return render_template('resultsdash.html')
 
 @home_bp.route('/intro')
 def intro():
