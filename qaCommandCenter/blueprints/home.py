@@ -15,13 +15,21 @@ def index():
     return render_template('index.html')
 
 
-# @home_bp.route('/results')
-# def results():
-#     return render_template('resultsdash.html')
+@home_bp.route('/brokenlinks')
+def brokenlinks():
+    return render_template('resultsdash.html')
 
 @home_bp.route('/companyflow')
 def results():
     CompanyFlow.companyflow()
+    return render_template('resultsdash.html')
+
+@home_bp.route('/contractor')
+def contractor():
+    return render_template('resultsdash.html')
+
+@home_bp.route('/managerflow')
+def managerflow():
     return render_template('resultsdash.html')
 
 @home_bp.route('/intro')
