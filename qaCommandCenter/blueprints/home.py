@@ -3,7 +3,7 @@
 from flask import render_template, Blueprint, current_app, make_response, jsonify
 from flask_babel import _
 from flask_login import current_user
-#from qaCommandCenter.jbcases.CompanyFlow import companyflow
+from qaCommandCenter.blueprints import CompanyFlow
 
 from qaCommandCenter.extensions import db
 
@@ -21,7 +21,7 @@ def index():
 
 @home_bp.route('/companyflow')
 def results():
-    #CompanyFlow.companyflow()
+    CompanyFlow.companyflow()
     return render_template('resultsdash.html')
 
 @home_bp.route('/intro')
