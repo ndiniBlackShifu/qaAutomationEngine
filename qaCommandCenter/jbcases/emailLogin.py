@@ -8,8 +8,8 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
 from webdriver_manager.chrome import ChromeDriverManager as CM
-from PIL import Image
-from Screenshot import *
+# from PIL import Image
+# from Screenshot import *
 
 
 
@@ -19,7 +19,7 @@ def emailLogin():
     PASSWORD = 'zipassW0rd123!'
     SEARCH = 'Verify My Account'
     # ==========================================
-    fscreenshot = Screenshot.Screenshot()
+    # fscreenshot = Screenshot.Screenshot()
 
 
     TIMEOUT = 10
@@ -103,10 +103,10 @@ def emailLogin():
     click_verify.click()
 
     # Take a screenshot of the Page and store it for analysis.
-    image = fscreenshot.full_Screenshot(browser, save_path=r'.', image_name='emailSending.png')
+    # image = fscreenshot.full_Screenshot(browser, save_path=r'.', image_name='emailSending.png')
     time.sleep(3)
-    screenshot = Image.open('emailSending.png')
-    screenshot.show()
+    # screenshot = Image.open('emailSending.png')
+    # screenshot.show()
 
     # Condition Logic, If the text searched is there open email and report success. (Optional as one can take a look at the screenshots)
     # Option to log the info in  a seperate file can be explored.
